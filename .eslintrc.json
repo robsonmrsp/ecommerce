@@ -19,20 +19,15 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "arrow-parens": [
-      "error",
-      "always"
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
+    "object-curly-newline":0,
+    "arrow-parens": ["error", "always"],
+    "linebreak-style": ["error", "unix"],
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
-    "import/no-cycle" : 0,
-    "import/order" : 0,
-    "react/no-did-update-set-state" : 0,
+    "import/no-cycle": 0,
+    "import/order": 0,
+    "react/no-did-update-set-state": 0,
     "import/prefer-default-export": 0,
     "max-len": [
       "error",
@@ -47,16 +42,10 @@
     "no-console": [
       1,
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
+    "comma-dangle": ["error", "always-multiline"],
     "quote-props": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
