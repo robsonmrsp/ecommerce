@@ -1,3 +1,5 @@
 import styled from 'styled-components';
 
-export const Comp = styled.div``;
+export const Container = styled.div.attrs({
+  className: 'container',
+})``;
