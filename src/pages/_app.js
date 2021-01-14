@@ -2,6 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 import BootstrapProvider from '@bootstrap-styled/provider';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import {EcommerceProvider } from '../shared/context';
+
+// Create a client
+const queryClient = new QueryClient();
 
 if (typeof window !== 'undefined') {
   require('jquery');
@@ -26,10 +31,14 @@ const theme = {
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <GlobalStyle />
-      <BootstrapProvider theme={theme}>
-        <Component {...pageProps} />
-      </BootstrapProvider>
+      <EcommerceProvider>
+        <QueryClientProvider client={queryClient}>
+          <GlobalStyle />
+          <BootstrapProvider theme={theme}>
+            <Component {...pageProps} />
+          </BootstrapProvider>
+        </QueryClientProvider>
+      </EcommerceProvider>
     </>
   );
 }
