@@ -3,8 +3,13 @@
 
 import { Container } from './styles';
 import { Image, Link, SearchInput, Toolbar } from '../../base';
+                                    
+import { EcommerceContext } from '@/shared/context';
+import { useContext } from 'react';
 
 export const Header = () => {
+  const { state } = useContext(EcommerceContext);
+  console.log(state);
   // categories
   console.log('');
   return (
