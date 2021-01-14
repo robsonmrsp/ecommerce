@@ -5,6 +5,7 @@ import { Container } from './styles';
 import { Image, Link, SearchInput, Toolbar } from '../../base';
 
 export const Header = () => {
+  // categories
   console.log('');
   return (
     // checar o scrol para adicionar a classe navbar-stuck
