@@ -8,6 +8,7 @@ import { Container } from './styles';
 
 export const Header = () => {
   const { state } = useContext(EcommerceContext);
+
   // categories
   console.log(state);
   return (

@@ -1,4 +1,3 @@
-import { map } from 'jquery';
 import React from 'react';
 
 export const TolbarCartItem = ({ item }) => (
@@ -45,7 +44,7 @@ export const ToolbarCart = ({ cart }) => {
                 <div className="simplebar-content-wrapper" style={{ height: 'auto', overflow: 'hidden' }}>
                   <div className="simplebar-content" style={{ padding: '0px 16px 0px 0px' }}>
                     {itemOrders.map((item) => (
-                      <TolbarCartItem item={item} />
+                      <TolbarCartItem key={item.product.id} item={item} />
                     ))}
                   </div>
                 </div>

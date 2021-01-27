@@ -4,7 +4,6 @@ import { Comp } from './styles';
 
 const PageLayout = ({ children }) => {
   console.log('');
-  
   return (
     <>
       <Header />
