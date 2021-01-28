@@ -13,7 +13,7 @@ export default class HttpRequest {
 
   createAuthHeaders = () => {
     const headers = {};
-    headers['Authorization'] = `Basic ${btoa('flordamodaadm:123456')}`;
+    headers['Authorization'] = `Basic ${btoa('XXX:123456')}`;
     headers['Content-Type'] = 'application/json';
 
     console.log(`Basic ${btoa('XXXXX:123456')}`);
