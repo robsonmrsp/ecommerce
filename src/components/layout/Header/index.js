@@ -8,9 +8,7 @@ import { Container } from './styles';
 
 export const Header = () => {
   const { state } = useContext(EcommerceContext);
-
-  // categories
-  console.log(state);
+  const { categories } = state;
   return (
     // checar o scrol para adicionar a classe navbar-stuck
     <div className="bg-light">
@@ -30,11 +28,7 @@ export const Header = () => {
             className="d-none d-lg-block mx-4"
             appendInput
             placeholder="Pesquisa de Produtos"
-            filterBy={[
-              { id: 1, name: 'All categories' },
-              { id: 2, name: 'Computers' },
-              { id: 3, name: 'Data Storages' },
-            ]}
+            filterBy={categories.map(({ id, name }) => ({ id, name }))}
           />
           <Toolbar cart={state.cart} />
         </Container>

@@ -4,13 +4,12 @@ import HttpRequest from '@/shared/http';
 import { useContext, useEffect } from 'react';
 
 const Index = ({ categories }) => {
-  const { state, update } = useContext(EcommerceContext);
-
-  update({ categories });
+  const { update } = useContext(EcommerceContext);
 
   useEffect(() => {
-    console.log(state);
-  });
+    update({ categories });
+  }, []);
+
   return (
     <PageLayout>
       <div>Index data {categories.length} </div>
