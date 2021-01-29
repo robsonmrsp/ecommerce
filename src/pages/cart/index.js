@@ -78,7 +78,7 @@ const Cart = () => {
                 </button>
               </div>
             </div>
-            {/* Item*/}
+            {/* Item */}
             <div className="d-sm-flex justify-content-between align-items-center my-4 pb-3 border-bottom">
               <div className="media media-ie-fix d-block d-sm-flex align-items-center text-center text-sm-left">
                 <a className="d-inline-block mx-auto mr-sm-4" href="shop-single-v1.html" style={{ width: '10rem' }}>
@@ -208,7 +208,7 @@ const Cart = () => {
                   <span className="badge badge-info font-size-xs mr-2">Note</span>
                   <span className="font-weight-medium">Additional comments</span>
                 </label>
-                <textarea className="form-control" rows={6} id="order-comments" defaultValue={''} />
+                <textarea className="form-control" rows={6} id="order-comments" defaultValue="" />
               </div>
               <div className="accordion" id="order-options">
                 <div className="card">
