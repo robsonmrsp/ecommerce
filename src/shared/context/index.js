@@ -11,7 +11,7 @@ const initialState = {
     itemOrders,
   },
   user: {},
-  categories: {},
+  categories: [],
   theme: {},
 };
 

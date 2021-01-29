@@ -19,7 +19,9 @@ const Index = ({ categories }) => {
 
 export const getServerSideProps = async (ctx) => {
   const httpRequest = new HttpRequest();
+  console.log('getServerSideProps');
   const categories = await httpRequest.get('rs/crud/productCategorys/basic');
+  console.log('categories', categories);
   return {
     props: {
       categories,
