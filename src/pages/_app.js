@@ -3,7 +3,7 @@ import BootstrapProvider from '@bootstrap-styled/provider';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import {EcommerceProvider } from '../shared/context';
+import {EcommerceProvider } from '@/shared/context';
 
 // Create a client
 const queryClient = new QueryClient();
