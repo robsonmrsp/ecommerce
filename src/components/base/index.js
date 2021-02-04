@@ -1,8 +1,13 @@
 import React from 'react';
 import { ToolbarCart } from '../cart';
+import NextLink from 'next/link';
 
 export const Image = ({ alt, ...props }) => <img alt={alt} {...props} />;
-export const Link = ({ children, ...props }) => <a {...props}> {children} </a>;
+export const Link = ({ children, href, ...props }) => (
+  <NextLink href={href}>
+    <a {...props}> {children} </a>
+  </NextLink>
+);
 
 // TODO criar a funcao de busca
 export const SearchInput = ({ className, appendInput, placeholder, filterBy = [] }) => (
@@ -331,13 +336,13 @@ export const Toolbar = ({ cart }) => (
       </div>
     </a>
     <div className="navbar-tool dropdown ml-3">
-      <a className="navbar-tool-icon-box bg-secondary dropdown-toggle" href="shop-cart.html">
+      <Link className="navbar-tool-icon-box bg-secondary dropdown-toggle" href="/cart">
         <span className="navbar-tool-label">4</span>
         <i className="navbar-tool-icon czi-cart" />
-      </a>
-      <a className="navbar-tool-text" href="shop-cart.html">
+      </Link>
+      <Link className="navbar-tool-text" href="/cart">
         <small>My Cart</small>$1,247.00
-      </a>
+      </Link>
       {/* Cart dropdown */}
       <ToolbarCart cart={cart} />
     </div>
