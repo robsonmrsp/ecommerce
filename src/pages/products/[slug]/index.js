@@ -43,8 +43,8 @@ const Home = () => (
                       <div className="cz-preview-item active" id="first">
                         <img
                           className="cz-image-zoom"
-                          src="img/shop/single/gallery/01.jpg"
-                          data-zoom="img/shop/single/gallery/01.jpg"
+                          src="/img/shop/single/gallery/01.jpg"
+                          data-zoom="/img/shop/single/gallery/01.jpg"
                           alt="Product "
                         />
                         <div className="cz-image-zoom-pane" />
@@ -52,8 +52,8 @@ const Home = () => (
                       <div className="cz-preview-item" id="second">
                         <img
                           className="cz-image-zoom"
-                          src="img/shop/single/gallery/02.jpg"
-                          data-zoom="img/shop/single/gallery/02.jpg"
+                          src="/img/shop/single/gallery/02.jpg"
+                          data-zoom="/img/shop/single/gallery/02.jpg"
                           alt="Product "
                         />
                         <div className="cz-image-zoom-pane" />
@@ -61,8 +61,8 @@ const Home = () => (
                       <div className="cz-preview-item" id="third">
                         <img
                           className="cz-image-zoom"
-                          src="img/shop/single/gallery/03.jpg"
-                          data-zoom="img/shop/single/gallery/03.jpg"
+                          src="/img/shop/single/gallery/03.jpg"
+                          data-zoom="/img/shop/single/gallery/03.jpg"
                           alt="Product "
                         />
                         <div className="cz-image-zoom-pane" />
@@ -70,8 +70,8 @@ const Home = () => (
                       <div className="cz-preview-item" id="fourth">
                         <img
                           className="cz-image-zoom"
-                          src="img/shop/single/gallery/04.jpg"
-                          data-zoom="img/shop/single/gallery/04.jpg"
+                          src="/img/shop/single/gallery/04.jpg"
+                          data-zoom="/img/shop/single/gallery/04.jpg"
                           alt="Product "
                         />
                         <div className="cz-image-zoom-pane" />
@@ -79,16 +79,16 @@ const Home = () => (
                     </div>
                     <div className="cz-thumblist order-sm-1">
                       <a className="cz-thumblist-item active" href="#first" data-ol-has-click-handler>
-                        <img src="img/shop/single/gallery/th01.jpg" alt="Product thumb" />
+                        <img src="/img/shop/single/gallery/th01.jpg" alt="Product thumb" />
                       </a>
                       <a className="cz-thumblist-item" href="#second" data-ol-has-click-handler>
-                        <img src="img/shop/single/gallery/th02.jpg" alt="Product thumb" />
+                        <img src="/img/shop/single/gallery/th02.jpg" alt="Product thumb" />
                       </a>
                       <a className="cz-thumblist-item" href="#third" data-ol-has-click-handler>
-                        <img src="img/shop/single/gallery/th03.jpg" alt="Product thumb" />
+                        <img src="/img/shop/single/gallery/th03.jpg" alt="Product thumb" />
                       </a>
                       <a className="cz-thumblist-item" href="#fourth" data-ol-has-click-handler>
-                        <img src="img/shop/single/gallery/th04.jpg" alt="Product thumb" />
+                        <img src="/img/shop/single/gallery/th04.jpg" alt="Product thumb" />
                       </a>
                       <a
                         className="cz-thumblist-item video-item"
@@ -157,7 +157,7 @@ const Home = () => (
                         <label className="custom-option-label rounded-circle" htmlFor="color1">
                           <span
                             className="custom-option-color rounded-circle"
-                            style={{ backgroundImage: 'url(img/shop/single/color-opt-1.png)' }}
+                            style={{ backgroundImage: 'url(/img/shop/single/color-opt-1.png)' }}
                           />
                         </label>
                       </div>
@@ -173,7 +173,7 @@ const Home = () => (
                         <label className="custom-option-label rounded-circle" htmlFor="color2">
                           <span
                             className="custom-option-color rounded-circle"
-                            style={{ backgroundImage: 'url(img/shop/single/color-opt-2.png)' }}
+                            style={{ backgroundImage: 'url(/img/shop/single/color-opt-2.png)' }}
                           />
                         </label>
                       </div>
@@ -189,7 +189,7 @@ const Home = () => (
                         <label className="custom-option-label rounded-circle" htmlFor="color3">
                           <span
                             className="custom-option-color rounded-circle"
-                            style={{ backgroundImage: 'url(img/shop/single/color-opt-3.png)' }}
+                            style={{ backgroundImage: 'url(/img/shop/single/color-opt-3.png)' }}
                           />
                         </label>
                       </div>
@@ -378,7 +378,7 @@ const Home = () => (
           {/* Product description section 1*/}
           <div className="row align-items-center py-md-3">
             <div className="col-lg-5 col-md-6 offset-lg-1 order-md-2">
-              <img className="d-block rounded-lg" src="img/shop/single/prod-img.jpg" alt="Imageas" />
+              <img className="d-block rounded-lg" src="/img/shop/single/prod-img.jpg" alt="Imageas" />
             </div>
             <div className="col-lg-4 col-md-6 offset-lg-1 py-4 order-md-1">
               <h2 className="h3 mb-4 pb-2">High quality materials</h2>
@@ -437,7 +437,7 @@ const Home = () => (
           {/* Product description section 2*/}
           <div className="row align-items-center py-4 py-lg-5">
             <div className="col-lg-5 col-md-6 offset-lg-1">
-              <img className="d-block rounded-lg" src="img/shop/single/prod-map.png" alt="Map" />
+              <img className="d-block rounded-lg" src="/img/shop/single/prod-map.png" alt="Map" />
             </div>
             <div className="col-lg-4 col-md-6 offset-lg-1 py-4">
               <h2 className="h3 mb-4 pb-2">Where is it made?</h2>
