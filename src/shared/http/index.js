@@ -1,7 +1,7 @@
 import axios from 'axios';
 import btoa from 'btoa';
 
-const BASE_URL = 'https://XXX.com/XXX/';
+const BASE_URL = 'https://ymbu.com.br/vendemais/';
 
 export default class HttpRequest {
   // constructor(url) {
@@ -13,7 +13,7 @@ export default class HttpRequest {
 
   createAuthHeaders = () => {
     const headers = {};
-    headers['Authorization'] = `Basic ${btoa('XXX:123456')}`;
+    headers['Authorization'] = `Basic ${btoa('modaadm:123456')}`;
     headers['Content-Type'] = 'application/json';
 
     console.log(`Basic ${btoa('XXXXX:123456')}`);
