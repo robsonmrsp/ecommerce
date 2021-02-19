@@ -1,22 +1,12 @@
 import axios from 'axios';
 import btoa from 'btoa';
-
-const BASE_URL = 'https://ymbu.com.br/vendemais/';
+import { BASE_URL } from '@/shared/config';
 
 export default class HttpRequest {
-  // constructor(url) {
-  //   if (!url) {
-  //     throw new Error('Need to define a sufix to endpoint!');
-  //   }
-  //   this.url = url;
-  // }
-
   createAuthHeaders = () => {
     const headers = {};
     headers['Authorization'] = `Basic ${btoa('modaadm:123456')}`;
     headers['Content-Type'] = 'application/json';
-
-    console.log(`Basic ${btoa('XXXXX:123456')}`);
     return headers;
   };
 
@@ -38,6 +28,4 @@ export default class HttpRequest {
     });
     return response;
   };
-
-  delete = () => {};
 }

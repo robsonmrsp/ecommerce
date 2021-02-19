@@ -522,3 +522,10 @@ export const itemOrders = [
     },
   },
 ];
+
+export const fixImageUrl = (path) => {
+  if (path.indexOf('ORIGINAL_') < 0) {
+    return path.replace('uploads/', 'uploads/ORIGINAL_');
+  }
+  return path;
+};

@@ -1,14 +1,22 @@
-import { useEffect } from 'react';
-import PageLayout from '@/components/layout/PageLayout';
+import { useContext, useEffect } from 'react';
+
 import Banner from '@/components/home/banner';
 import TrendingProducts from '@/components/home/products/Trend';
+import PageLayout from '@/components/layout/PageLayout';
+import { EcommerceContext } from '@/shared/context';
+import HttpRequest from '@/shared/http';
 
-const Home = () => {
-  console.log('Home');
+const Home = ({ home }) => {
+  const { state, update } = useContext(EcommerceContext);
+
+  useEffect(() => {
+    update({ home });
+  }, []);
+
   return (
     <PageLayout>
-      <Banner />
-      <TrendingProducts />
+      <Banner images={home?.atachmentsDesktop} />
+      <TrendingProducts products={state.home?.products} />
       <section className="container mt-4 mb-grid-gutter">
         <div className="bg-faded-info rounded-lg py-4">
           <div className="row align-items-center">
@@ -369,6 +377,17 @@ const Home = () => {
       </section>
     </PageLayout>
   );
+};
+
+export const getServerSideProps = async () => {
+  const httpRequest = new HttpRequest();
+  const home = await httpRequest.get('rs/crud/homes/configuration');
+  console.log(home);
+  return {
+    props: {
+      home,
+    },
+  };
 };
 
 export default Home;

@@ -1,12 +1,23 @@
 import React from 'react';
 import NextLink from 'next/link';
+import Image from 'next/image';
+import { fixImageUrl } from '@/shared/data';
+import { BASE_URL } from '@/shared/config';
 
-export const Image = ({ alt, ...props }) => <img alt={alt} {...props} />;
+// export const Image = ({ alt, ...props }) => <img alt={alt} {...props} />;
 
-export const ShopProduct = () => {
+export const ShopProduct = ({ product }) => {
+  const {
+    id,
+    slug,
+    name,
+    description,
+    salePrice,
+    attachments: [attachment],
+  } = product;
   console.log('ShopProduct');
   return (
-    <div className="col-lg-3 col-md-4 col-sm-6 px-2">
+    <div className="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
       <div className="card product-card">
         <div className="product-card-actions d-flex align-items-center">
           <a className="btn-action nav-link-style mr-2" href="#">
@@ -25,20 +36,28 @@ export const ShopProduct = () => {
           </button>
         </div>
         <a className="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
-          <img src="img/shop/catalog/65.jpg" alt="Product" />
+          <img src={`${BASE_URL}${fixImageUrl(attachment.path)}`} alt={attachment.name} />
         </a>
         <div className="card-body py-2">
           <a className="product-meta d-block font-size-xs pb-1" href="#">
-            Computers
+            {name}
           </a>
           <h3 className="product-title font-size-sm">
-            <a href="shop-single-v2.html">Convertible 2-in-1 HD Laptop</a>
+            <a href="shop-single-v2.html">{description}</a>
           </h3>
           <div className="d-flex justify-content-between">
             <div className="product-price">
               <span className="text-accent">
-                $412.<small>00</small>
+                R${salePrice}
+                <small>00</small>
               </span>
+            </div>
+            <div className="star-rating">
+              <i className="sr-star czi-star-filled active" />
+              <i className="sr-star czi-star-filled active" />
+              <i className="sr-star czi-star-filled active" />
+              <i className="sr-star czi-star-filled active" />
+              <i className="sr-star czi-star-filled active" />
             </div>
           </div>
         </div>
@@ -61,6 +80,7 @@ export const ShopProduct = () => {
           </div>
         </div>
       </div>
+      <hr className="d-sm-none" />
     </div>
   );
 };
