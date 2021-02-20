@@ -1,6 +1,5 @@
 import React from 'react';
 import NextLink from 'next/link';
-import Image from 'next/image';
 import { fixImageUrl } from '@/shared/data';
 import { BASE_URL } from '@/shared/config';
 
@@ -35,9 +34,11 @@ export const ShopProduct = ({ product }) => {
             <i className="czi-heart" />
           </button>
         </div>
-        <a className="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
-          <img src={`${BASE_URL}${fixImageUrl(attachment.path)}`} alt={attachment.name} />
-        </a>
+        <NextLink href={`/product/${slug}/${id}`}>
+          <a className="card-img-top d-block overflow-hidden">
+            <img src={`${BASE_URL}${fixImageUrl(attachment.path)}`} alt={attachment.name} />
+          </a>
+        </NextLink>
         <div className="card-body py-2">
           <a className="product-meta d-block font-size-xs pb-1" href="#">
             {name}

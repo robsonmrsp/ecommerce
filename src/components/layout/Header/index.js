@@ -17,7 +17,7 @@ export const Header = () => {
         <Container>
           <Link
             className="navbar-brand d-none d-sm-block mr-3 flex-shrink-0"
-            href="index.html"
+            href="/home"
             style={{ minWidth: '7rem' }}
           >
             <Image width={142} src="img/logo-dark.png" alt="Vendemais" />

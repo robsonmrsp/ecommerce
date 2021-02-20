@@ -1,6 +1,6 @@
 import PageLayout from '@/components/layout/PageLayout';
 import { EcommerceContext } from '@/shared/context';
-import HttpRequest from '@/shared/http';
+import HttpRequest from '@/shared/http/HttpRequest';
 import { useContext, useEffect } from 'react';
 
 const Index = ({ categories }) => {

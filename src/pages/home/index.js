@@ -1,10 +1,10 @@
 import { useContext, useEffect } from 'react';
 
-import Banner from '@/components/home/banner';
-import TrendingProducts from '@/components/home/products/Trend';
+import Banner from '@/components/home/Banner';
+import TrendingProductsList from '@/components/home/products/TrendingProductsList';
 import PageLayout from '@/components/layout/PageLayout';
 import { EcommerceContext } from '@/shared/context';
-import HttpRequest from '@/shared/http';
+import HttpRequest from '@/shared/http/HttpRequest';
 
 const Home = ({ home }) => {
   const { state, update } = useContext(EcommerceContext);
@@ -16,7 +16,7 @@ const Home = ({ home }) => {
   return (
     <PageLayout>
       <Banner images={home?.atachmentsDesktop} />
-      <TrendingProducts products={state.home?.products} />
+      <TrendingProductsList products={state.home?.products} />
       <section className="container mt-4 mb-grid-gutter">
         <div className="bg-faded-info rounded-lg py-4">
           <div className="row align-items-center">
