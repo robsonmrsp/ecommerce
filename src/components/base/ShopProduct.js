@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import NextLink from 'next/link';
 import { fixImageUrl } from '@/shared/data';
 import { BASE_URL } from '@/shared/config';
+import { EcommerceContext } from '@/shared/context';
 
 // export const Image = ({ alt, ...props }) => <img alt={alt} {...props} />;
 
 export const ShopProduct = ({ product }) => {
+  const { state, update } = useContext(EcommerceContext);
+
+  const addProduct = (prod) => {
+    const { cart } = state;
+    const { itemOrders } = cart;
+    itemOrders.push({ product: prod, amount: 1 });
+    cart.itemOrders = itemOrders;
+    update({ cart });
+  };
+
   const {
     id,
     slug,
@@ -23,14 +34,7 @@ export const ShopProduct = ({ product }) => {
             <i className="czi-compare mr-1" />
             Compare
           </a>
-          <button
-            className="btn-wishlist btn-sm"
-            type="button"
-            data-toggle="tooltip"
-            data-placement="left"
-            title
-            data-original-title="Add to wishlist"
-          >
+          <button className="btn-wishlist btn-sm" type="button" data-original-title="Add to wishlist">
             <i className="czi-heart" />
           </button>
         </div>
@@ -69,6 +73,9 @@ export const ShopProduct = ({ product }) => {
             data-toggle="toast"
             data-target="#cart-toast"
             data-ol-has-click-handler
+            onClick={() => {
+              addProduct(product);
+            }}
           >
             <i className="czi-cart font-size-sm mr-1" />
             Add to Cart
