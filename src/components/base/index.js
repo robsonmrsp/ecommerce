@@ -337,7 +337,7 @@ export const Toolbar = ({ cart }) => (
     </a>
     <div className="navbar-tool dropdown ml-3">
       <Link className="navbar-tool-icon-box bg-secondary dropdown-toggle" href="/cart">
-        <span className="navbar-tool-label">4</span>
+        <span className="navbar-tool-label">{cart.itemOrders.length}</span>
         <i className="navbar-tool-icon czi-cart" />
       </Link>
       <Link className="navbar-tool-text" href="/cart">
