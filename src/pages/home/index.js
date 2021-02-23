@@ -379,10 +379,13 @@ const Home = ({ home }) => {
   );
 };
 
+/**
+ * Do not confuse with getSytaticProps. The getServerSideProps is used to SSR.
+ * The last one is used with static generation. Runs at build time in production
+ */
 export const getServerSideProps = async () => {
   const httpRequest = new HttpRequest();
   const home = await httpRequest.get('rs/crud/homes/configuration');
-  console.log(home);
   return {
     props: {
       home,
