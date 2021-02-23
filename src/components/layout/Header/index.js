@@ -9,10 +9,9 @@ import { Container } from './styles';
 export const Header = () => {
   const { state } = useContext(EcommerceContext);
   const { categories = [] } = state;
-  console.log(state);
   return (
     // checar o scrol para adicionar a classe navbar-stuck
-    <div className="bg-light fixed-top">
+    <div className="bg-light ">
       <div className="navbar navbar-expand-lg navbar-light">
         <Container>
           <Link className="navbar-brand d-none d-sm-block mr-3 flex-shrink-0" href="/home" style={{ minWidth: '7rem' }}>

@@ -6,11 +6,15 @@ import PageLayout from '@/components/layout/PageLayout';
 import { EcommerceContext } from '@/shared/context';
 import HttpRequest from '@/shared/http/HttpRequest';
 
-const Home = ({ home }) => {
+const Home = ({ home, categories }) => {
   const { state, update } = useContext(EcommerceContext);
 
   useEffect(() => {
     update({ home });
+  }, []);
+
+  useEffect(() => {
+    update({ categories });
   }, []);
 
   return (
@@ -386,9 +390,12 @@ const Home = ({ home }) => {
 export const getServerSideProps = async () => {
   const httpRequest = new HttpRequest();
   const home = await httpRequest.get('rs/crud/homes/configuration');
+  const categories = await httpRequest.get('rs/crud/productCategorys/basic');
+
   return {
     props: {
       home,
+      categories,
     },
   };
 };

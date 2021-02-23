@@ -6,5 +6,10 @@ https://stackoverflow.com/questions/60349190/adding-ionic-react-to-an-existing-r
 
 
 
+
+[X] - Add a first product to cart.
+[ ] - Clear the initialState for the context
+[ ] - Work on the cart Page
+[ ] - search product
+
 [ ] - Create a SEO-Friendly head component .
-[ ] - Add a first product to cart.
