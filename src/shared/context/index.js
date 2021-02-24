@@ -7,6 +7,9 @@ const reducer = (state, pair) => ({ ...state, ...pair });
 export const EcommerceContext = createContext();
 
 const initialState = {
+  layout: {
+    showMegaMenu: '',
+  },
   cart: {
     itemOrders,
   },

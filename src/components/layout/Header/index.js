@@ -1,17 +1,33 @@
 // baseado nesse:
 // https://Vendemais.createx.studio/home-electronics-store.html
 
+import { useContext, useState } from 'react';
 import { Image, Link, Menu, SearchInput, Toolbar } from '@/components/base';
 import { EcommerceContext } from '@/shared/context';
-import { useContext } from 'react';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { Container } from './styles';
 
 export const Header = () => {
   const { state } = useContext(EcommerceContext);
   const { categories = [] } = state;
+
+  const [newClasses, setNewClasses] = useState('');
+
+  useScrollPosition(
+    ({ currPos }) => {
+      const isVisible = Math.abs(currPos.y) < 160;
+      if (isVisible) {
+        setNewClasses('');
+      } else {
+        setNewClasses('navbar-sticky navbar-stuck');
+      }
+    },
+    [newClasses],
+  );
+
   return (
     // checar o scrol para adicionar a classe navbar-stuck
-    <div className="bg-light ">
+    <header className={`bg-light ${newClasses}`}>
       <div className="navbar navbar-expand-lg navbar-light">
         <Container>
           <Link className="navbar-brand d-none d-sm-block mr-3 flex-shrink-0" href="/home" style={{ minWidth: '7rem' }}>
@@ -30,6 +46,6 @@ export const Header = () => {
         </Container>
       </div>
       <Menu />
-    </div>
+    </header>
   );
 };
