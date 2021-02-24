@@ -7,9 +7,10 @@ const PageLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <Row>
+      <div>{children}</div>
+      {/* <Row>
         <Col>{children} </Col>
-      </Row>
+      </Row> */}
     </>
   );
 };

@@ -25,7 +25,6 @@ export const ShopProduct = ({ product }) => {
     salePrice,
     attachments: [attachment],
   } = product;
-  console.log('ShopProduct');
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
       <div className="card product-card">

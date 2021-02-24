@@ -1,7 +1,5 @@
 import React, { createContext, useReducer } from 'react';
 
-import { itemOrders } from '../data'; // just to fake a initial data to show in the Head cart
-
 const reducer = (state, pair) => ({ ...state, ...pair });
 
 export const EcommerceContext = createContext();
@@ -11,7 +9,7 @@ const initialState = {
     showMegaMenu: '',
   },
   cart: {
-    itemOrders,
+    itemOrders: [],
   },
   user: {},
   categories: [],

@@ -8,12 +8,11 @@ https://stackoverflow.com/questions/60349190/adding-ionic-react-to-an-existing-r
 
 
 [X] - Add a first product to cart.
-[ ] - Clear the initialState for the context
-[ ] - Work on the cart Page
-[ ] - search product
-
-[ ] - Rever o header e o comportamnto de fix e etc. Nesse exemplo(http://localhost:8080/shop-single-v1.html)
+[X] - Rever o header e o comportamnto de fix e etc. Nesse exemplo(http://localhost:8080/shop-single-v1.html)
       podemos ver o header fixo e o scroll escondendo a segunda parte do menu
       criar um componente de scroll para isso.
       https://dev.to/n8tb1t/tracking-scroll-position-with-react-hooks-3bbj
+[X] - Clear the initialState for the context
+[ ] - Work on the cart Page
+[ ] - search product
 [ ] - Create a SEO-Friendly head component .
