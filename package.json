@@ -10,6 +10,7 @@
   "dependencies": {
     "@bootstrap-styled/provider": "^2.0.3",
     "@bootstrap-styled/v4": "^3.4.0",
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "btoa": "^1.2.1",
