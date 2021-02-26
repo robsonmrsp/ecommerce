@@ -10,8 +10,8 @@ export default class HttpRequest {
     return headers;
   };
 
-  get = async (url) => {
-    const response = await axios.get(`${BASE_URL}${url}/`, { headers: this.createAuthHeaders() });
+  get = async (url, params) => {
+    const response = await axios.get(`${BASE_URL}${url}/`, { headers: this.createAuthHeaders(), params });
     return response.data;
   };
 

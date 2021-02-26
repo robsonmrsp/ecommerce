@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ToolbarCart } from '../cart';
+import Router from 'next/router';
 import NextLink from 'next/link';
 
 import { EcommerceContext } from '@/shared/context';
@@ -12,31 +13,46 @@ export const Link = ({ children, href, ...props }) => (
 );
 
 // TODO criar a funcao de busca
-export const SearchInput = ({ className, appendInput, placeholder, filterBy = [] }) => (
-  <div className={`input-group-overlay ${className} `}>
-    <div className="input-group-prepend-overlay">
-      <span className="input-group-text">
-        <i className="czi-search" />
-      </span>
-    </div>
-    <input
-      className={`form-control prepended-form-control ${appendInput ? 'appended-form-control' : ''}`}
-      type="text"
-      placeholder={placeholder}
-    />
-    {filterBy.length > 0 && (
-      <div className="input-group-append-overlay">
-        <select className="custom-select">
-          {filterBy.map(({ id, name }) => (
-            <option key={id} value={id}>
-              {name}
-            </option>
-          ))}
-        </select>
+export const SearchInput = ({ className, appendInput, placeholder, filterBy = [] }) => {
+  const onSearch = (search) => {
+    Router.push({
+      pathname: '/products/',
+      query: { description: search },
+    });
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(e.currentTarget.value);
+    }
+  };
+
+  return (
+    <div className={`input-group-overlay ${className} `}>
+      <div className="input-group-prepend-overlay">
+        <span className="input-group-text">
+          <i className="czi-search" />
+        </span>
       </div>
-    )}
-  </div>
-);
+      <input
+        className={`form-control prepended-form-control ${appendInput ? 'appended-form-control' : ''}`}
+        type="text"
+        onKeyDown={handleKeyDown}
+        placeholder={placeholder}
+      />
+      {filterBy.length > 0 && (
+        <div className="input-group-append-overlay">
+          <select className="custom-select">
+            {filterBy.map(({ id, name }) => (
+              <option key={id} value={id}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export const Menu = ({ cart }) => {
   console.log('');
