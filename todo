@@ -16,3 +16,7 @@ https://stackoverflow.com/questions/60349190/adding-ionic-react-to-an-existing-r
 [ ] - Work on the cart Page
 [ ] - search product
 [ ] - Create a SEO-Friendly head component .
+
+[ ] - The issue with page transitions, (Router and  etc)
+[ ] - Finish ToolbarFilter
+[ ] - VErify if is possible to use the same card for product ShopProduct a nd 
