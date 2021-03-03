@@ -9,14 +9,15 @@ import ProductsTopPaginator from '@/components/shop/ProductsTopPagination';
 
 const httpRequest = new HttpRequest();
 
-const Home = ({ pageProducts }) => {
+const Home = ({ pageProducts, query }) => {
   const [pager, setPager] = useState(pageProducts);
+  const [searchQuery, setSearchQuery] = useState(query);
   useEffect(() => {
     console.log(pageProducts);
   }, []);
 
   const goToPage = async (pageNumber) => {
-    const newPage = await httpRequest.get('rs/crud/products', { page: pageNumber });
+    const newPage = await httpRequest.get('rs/crud/products', { page: pageNumber, ...searchQuery });
     setPager(newPage);
   };
 
@@ -72,6 +73,7 @@ export const getServerSideProps = async (ctx) => {
   const pageProducts = await httpRequest.get('rs/crud/products', query);
   return {
     props: {
+      query,
       product: {},
       pageProducts,
     },

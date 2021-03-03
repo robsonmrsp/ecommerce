@@ -14,7 +14,7 @@ const ProductsTopPagination = ({ pager, onNextPage, onPreviousPage, goToPage }) 
           type="button"
           className="nav-link-style  btn-sm btn"
           onClick={() => {
-            if (actualPage > 0) goToPage(actualPage + 1);
+            if (actualPage > 0) goToPage(actualPage - 1);
           }}
         >
           <i className="czi-arrow-left" />
@@ -26,7 +26,7 @@ const ProductsTopPagination = ({ pager, onNextPage, onPreviousPage, goToPage }) 
           type="button"
           className="nav-link-style  btn-sm btn"
           onClick={() => {
-            if (actualPage > 0) goToPage(actualPage + 1);
+            goToPage(actualPage + 1);
           }}
         >
           <i className="czi-arrow-right" />
