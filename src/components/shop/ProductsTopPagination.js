@@ -1,6 +1,12 @@
-const ProductsTopPagination = ({ pager, onNextPage, onPreviousPage, goToPage }) => {
-  const { actualPage, totalRecords, pageSize = 15 } = pager;
+import { useEffect, useState } from 'react';
 
+const ProductsTopPagination = ({ pager, goToPage }) => {
+  const { actualPage, totalRecords, pageSize = 15 } = pager;
+  const [lastPage, setLastPage] = useState(parseInt(totalRecords / pageSize + 1, 10));
+  useEffect(() => {
+    const { totalRecords: total, pageSize: size = 15 } = pager;
+    setLastPage(parseInt(total / size + 1, 10));
+  }, [pager]);
   return (
     <div className="d-flex justify-content-between align-items-center">
       <div className="dropdown mr-2">
@@ -14,19 +20,19 @@ const ProductsTopPagination = ({ pager, onNextPage, onPreviousPage, goToPage }) 
           type="button"
           className="nav-link-style  btn-sm btn"
           onClick={() => {
-            if (actualPage > 0) goToPage(actualPage - 1);
+            if (actualPage > 1) goToPage(actualPage - 1);
           }}
         >
           <i className="czi-arrow-left" />
         </button>
         <span className="font-size-md" style={{ paddingTop: '6px' }}>
-          {actualPage} / {parseInt(totalRecords / pageSize + 1, 10)}
+          {actualPage} / {lastPage}
         </span>
         <button
           type="button"
           className="nav-link-style  btn-sm btn"
           onClick={() => {
-            goToPage(actualPage + 1);
+            if (actualPage < lastPage) goToPage(actualPage + 1);
           }}
         >
           <i className="czi-arrow-right" />

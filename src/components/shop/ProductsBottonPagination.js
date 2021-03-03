@@ -1,5 +1,12 @@
-const ProductsBottonPagination = ({ pager, onNextPage, onPreviousPage, goToPage }) => {
+import { useEffect, useState } from 'react';
+
+const ProductsBottonPagination = ({ pager, goToPage }) => {
   const { actualPage, totalRecords, pageSize = 15 } = pager;
+  const [lastPage, setLastPage] = useState(parseInt(totalRecords / pageSize + 1, 10));
+  useEffect(() => {
+    const { totalRecords: total, pageSize: size = 15 } = pager;
+    setLastPage(parseInt(total / size + 1, 10));
+  }, [pager]);
 
   return (
     <nav className="d-flex justify-content-between pt-2" aria-label="Page navigation">
@@ -9,7 +16,7 @@ const ProductsBottonPagination = ({ pager, onNextPage, onPreviousPage, goToPage 
             type="button"
             className="page-link btn-sm btn"
             onClick={() => {
-              if (actualPage > 0) goToPage(actualPage - 1);
+              if (actualPage > 1) goToPage(actualPage - 1);
             }}
           >
             <i className="czi-arrow-left mr-2" />
@@ -20,16 +27,16 @@ const ProductsBottonPagination = ({ pager, onNextPage, onPreviousPage, goToPage 
       <ul className="pagination">
         <li className="page-item d-sm-none">
           <span className="page-link page-link-static">
-            {actualPage} / {parseInt(totalRecords / pageSize + 1, 10)}
+            {actualPage} / {lastPage}
           </span>
         </li>
-        {[...new Array(parseInt(totalRecords / pageSize + 1, 10))].map((_, index) => (
+        {[...new Array(lastPage)].map((_, index) => (
           <li className={`page-item d-none d-sm-block ${actualPage === index + 1 ? 'active' : ''}`}>
             <button
               type="button"
               className="btn-sm btn page-link"
               onClick={() => {
-                goToPage(index + 1);
+                if (index < lastPage) goToPage(index + 1);
               }}
             >
               {index + 1}
@@ -43,7 +50,7 @@ const ProductsBottonPagination = ({ pager, onNextPage, onPreviousPage, goToPage 
             type="button"
             className="page-link btn-sm btn"
             onClick={() => {
-              goToPage(actualPage + 1);
+              if (actualPage < lastPage) goToPage(actualPage + 1);
             }}
           >
             Próximo
