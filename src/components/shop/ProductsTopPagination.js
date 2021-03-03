@@ -1,4 +1,4 @@
-const ProductsTopPagination = ({ pager, onNextPage, onPreviousPage }) => {
+const ProductsTopPagination = ({ pager, onNextPage, onPreviousPage, goToPage }) => {
   const { actualPage, totalRecords, pageSize = 15 } = pager;
 
   return (
@@ -10,13 +10,25 @@ const ProductsTopPagination = ({ pager, onNextPage, onPreviousPage }) => {
         </a>
       </div>
       <div className="d-flex">
-        <button type="button" className="nav-link-style  btn-sm btn" onClick={onPreviousPage}>
+        <button
+          type="button"
+          className="nav-link-style  btn-sm btn"
+          onClick={() => {
+            if (actualPage > 0) goToPage(actualPage + 1);
+          }}
+        >
           <i className="czi-arrow-left" />
         </button>
         <span className="font-size-md" style={{ paddingTop: '6px' }}>
           {actualPage} / {parseInt(totalRecords / pageSize + 1, 10)}
         </span>
-        <button type="button" className="nav-link-style  btn-sm btn" onClick={onNextPage}>
+        <button
+          type="button"
+          className="nav-link-style  btn-sm btn"
+          onClick={() => {
+            if (actualPage > 0) goToPage(actualPage + 1);
+          }}
+        >
           <i className="czi-arrow-right" />
         </button>
       </div>

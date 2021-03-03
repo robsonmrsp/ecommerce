@@ -5,7 +5,13 @@ const ProductsBottonPagination = ({ pager, onNextPage, onPreviousPage, goToPage 
     <nav className="d-flex justify-content-between pt-2" aria-label="Page navigation">
       <ul className="pagination">
         <li className="page-item">
-          <button type="button" className="page-link btn-sm btn" onClick={onPreviousPage}>
+          <button
+            type="button"
+            className="page-link btn-sm btn"
+            onClick={() => {
+              if (actualPage > 0) goToPage(actualPage - 1);
+            }}
+          >
             <i className="czi-arrow-left mr-2" />
             Anterior
           </button>
@@ -33,7 +39,13 @@ const ProductsBottonPagination = ({ pager, onNextPage, onPreviousPage, goToPage 
       </ul>
       <ul className="pagination">
         <li className="page-item">
-          <button type="button" className="page-link btn-sm btn" onClick={onNextPage}>
+          <button
+            type="button"
+            className="page-link btn-sm btn"
+            onClick={() => {
+              goToPage(actualPage + 1);
+            }}
+          >
             Próximo
             <i className="czi-arrow-right ml-2" />
           </button>

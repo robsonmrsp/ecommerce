@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import Link from 'next/link';
 import HttpRequest from '@/shared/http/HttpRequest';
@@ -7,10 +7,18 @@ import ProductCard from '@/components/shop/ProductCard';
 import ProductsBottonPagination from '@/components/shop/ProductsBottonPagination';
 import ProductsTopPaginator from '@/components/shop/ProductsTopPagination';
 
+const httpRequest = new HttpRequest();
+
 const Home = ({ pageProducts }) => {
+  const [pager, setPager] = useState(pageProducts);
   useEffect(() => {
     console.log(pageProducts);
   }, []);
+
+  const goToPage = async (pageNumber) => {
+    const newPage = await httpRequest.get('rs/crud/products', { page: pageNumber });
+    setPager(newPage);
+  };
 
   return (
     <PageLayout>
@@ -44,16 +52,16 @@ const Home = ({ pageProducts }) => {
         </div>
         <div className="container pb-5 mb-2 mb-md-4">
           <div className="bg-light box-shadow-lg rounded-lg p-4 mt-n5 mb-4">
-            <ProductsTopPaginator pager={pageProducts} />
+            <ProductsTopPaginator pager={pager} goToPage={goToPage} />
             <ToolbarFilter />
           </div>
           <div className="row pt-3 mx-n2">
-            {(pageProducts.itens || []).map((product) => (
+            {(pager.itens || []).map((product) => (
               <ProductCard product={product} />
             ))}
           </div>
           <hr className="my-3" />
-          <ProductsBottonPagination pager={pageProducts} />
+          <ProductsBottonPagination pager={pager} goToPage={goToPage} />
         </div>
       </>
     </PageLayout>
@@ -61,7 +69,6 @@ const Home = ({ pageProducts }) => {
 };
 export const getServerSideProps = async (ctx) => {
   const { query } = ctx;
-  const httpRequest = new HttpRequest();
   const pageProducts = await httpRequest.get('rs/crud/products', query);
   return {
     props: {
