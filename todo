@@ -13,7 +13,8 @@ https://stackoverflow.com/questions/60349190/adding-ionic-react-to-an-existing-r
       criar um componente de scroll para isso.
       https://dev.to/n8tb1t/tracking-scroll-position-with-react-hooks-3bbj
 [X] - Clear the initialState for the context
-[ ] - search product
+[X] - search product
+[ ] - Try to force a Router push to force the next/previous by change the url address.
 
 [ ] - Work on the cart Page
 [ ] - Create a SEO-Friendly head component .

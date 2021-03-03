@@ -39,7 +39,7 @@ export const ShopProduct = ({ product }) => {
         </div>
         <NextLink href={`/product/${slug}/${id}`}>
           <a className="card-img-top d-block overflow-hidden">
-            <img src={`${BASE_URL}${fixImageUrl(attachment.path)}`} alt={attachment.name} />
+            <img src={`${BASE_URL}${fixImageUrl(attachment?.path)}`} alt={attachment?.name} />
           </a>
         </NextLink>
         <div className="card-body py-2">

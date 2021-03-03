@@ -6,6 +6,7 @@ import ToolbarFilter from '@/components/shop/ToolbarFilter';
 import ProductCard from '@/components/shop/ProductCard';
 import ProductsBottonPagination from '@/components/shop/ProductsBottonPagination';
 import ProductsTopPaginator from '@/components/shop/ProductsTopPagination';
+import { ShopProduct } from '@/components/base/ShopProduct';
 
 const httpRequest = new HttpRequest();
 
@@ -58,7 +59,8 @@ const Home = ({ pageProducts, query }) => {
           </div>
           <div className="row pt-3 mx-n2">
             {(pager.itens || []).map((product) => (
-              <ProductCard product={product} />
+              // <ProductCard product={product} />
+              <ShopProduct product={product} />
             ))}
           </div>
           <hr className="my-3" />

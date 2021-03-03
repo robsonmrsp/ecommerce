@@ -524,6 +524,9 @@ export const itemOrders = [
 ];
 
 export const fixImageUrl = (path) => {
+  if (!path) {
+    return 'uploads/No-image-available.png';
+  }
   if (path.indexOf('ORIGINAL_') < 0) {
     return path.replace('uploads/', 'uploads/ORIGINAL_');
   }
