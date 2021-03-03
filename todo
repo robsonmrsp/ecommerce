@@ -13,10 +13,12 @@ https://stackoverflow.com/questions/60349190/adding-ionic-react-to-an-existing-r
       criar um componente de scroll para isso.
       https://dev.to/n8tb1t/tracking-scroll-position-with-react-hooks-3bbj
 [X] - Clear the initialState for the context
-[ ] - Work on the cart Page
 [ ] - search product
+
+[ ] - Work on the cart Page
 [ ] - Create a SEO-Friendly head component .
 
 [ ] - The issue with page transitions, (Router and  etc)
 [ ] - Finish ToolbarFilter
-[ ] - VErify if is possible to use the same card for product ShopProduct a nd 
+[ ] - VErify if is possible to use the same card for product ShopProduct and ProductCard
+[ ] - Compare Context vs Other state management(Redux, etc);
