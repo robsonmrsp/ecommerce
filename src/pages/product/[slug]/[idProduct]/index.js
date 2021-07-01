@@ -25,6 +25,7 @@ const Product = ({ product }) => {
           url: 'https://ecommerce-pi-six.vercel.app/product/sasasasl/808614',
           title: 'Open Graph Title',
           description: 'Open Graph Description',
+          type: 'article',
           images: [
             {
               content: 'https://ymbu.com.br/vendemais/uploads/1596210152018_blusa-manga-curta-em-ribana-canelada-branco_559020_1000_1.jpg',
