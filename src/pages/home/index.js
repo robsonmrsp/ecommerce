@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 
 import Banner from '@/components/home/Banner';
 import TrendingProductsList from '@/components/home/products/TrendingProductsList';
-import PageLayout from '@/components/layout/PageLayout';
+import PageLayout from '@/components/layout/PageLayout/PageLayout';
 import { EcommerceContext } from '@/shared/context';
 import HttpRequest from '@/shared/http/HttpRequest';
 

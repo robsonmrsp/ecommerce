@@ -1,16 +1,15 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import PageLayout from '@/components/layout/PageLayout';
+import React, { useEffect, useState } from 'react';
+import PageLayout from '@/components/layout/PageLayout/PageLayout';
 import Link from 'next/link';
 import HttpRequest from '@/shared/http/HttpRequest';
 import ToolbarFilter from '@/components/shop/ToolbarFilter';
-import ProductCard from '@/components/shop/ProductCard';
 import ProductsBottonPagination from '@/components/shop/ProductsBottonPagination';
 import ProductsTopPaginator from '@/components/shop/ProductsTopPagination';
 import { ShopProduct } from '@/components/base/ShopProduct';
 
 const httpRequest = new HttpRequest();
 
-const Home = ({ pageProducts, query }) => {
+const Home = ({ pageProducts, query }) => {zfds
   const [pager, setPager] = useState(pageProducts);
   const [searchQuery, setSearchQuery] = useState(query);
   useEffect(() => {

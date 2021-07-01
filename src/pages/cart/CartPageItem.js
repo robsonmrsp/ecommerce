@@ -1,16 +1,17 @@
 import { BASE_URL } from '@/shared/config';
 import { fixImageUrl } from '@/shared/data';
 
-const CartPageItem = ({ itemOrder }) => {
-  const { product, amount } = itemOrder;
+const CartPageItem = ({ itemOrder = {} }) => {
+  const { product = {}, amount } = itemOrder;
   const {
     id,
     slug,
     name,
     description,
-    salePrice,
-    attachments: [attachment],
-  } = product;
+    salePrice = 0,
+    attachments = [],
+  } = product || {};
+  const attachment = attachments[0] || {};
   return (
     <div className="d-sm-flex justify-content-between align-items-center my-4 pb-3 border-bottom">
       <div className="media media-ie-fix d-block d-sm-flex align-items-center text-center text-sm-left">

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import PageLayout from '@/components/layout/PageLayout';
+import PageLayout from '@/components/layout/PageLayout/PageLayout';
 import Link from 'next/link';
 import HttpRequest from '@/shared/http/HttpRequest';
 import ToolbarFilter from '@/components/shop/ToolbarFilter';
