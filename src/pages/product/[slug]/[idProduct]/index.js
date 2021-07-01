@@ -27,14 +27,14 @@ const Product = ({ product }) => {
           description: 'Open Graph Description',
           images: [
             {
-              url: 'https://ymbu.com.br/vendemais/uploads/1596210152018_blusa-manga-curta-em-ribana-canelada-branco_559020_1000_1.jpg',
+              content: 'https://ymbu.com.br/vendemais/uploads/1596210152018_blusa-manga-curta-em-ribana-canelada-branco_559020_1000_1.jpg',
               width: 800,
               height: 600,
               itemprop: 'image',
               alt: 'Og Image Pequena',
             },
             {
-              url: 'https://ymbu.com.br/vendemais/uploads/ORIGINAL_1596210152018_blusa-manga-curta-em-ribana-canelada-branco_559020_1000_1.jpg',
+              content: 'https://ymbu.com.br/vendemais/uploads/ORIGINAL_1596210152018_blusa-manga-curta-em-ribana-canelada-branco_559020_1000_1.jpg',
               width: 900,
               height: 800,
               itemprop: 'image',
