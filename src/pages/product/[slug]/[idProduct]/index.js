@@ -8,9 +8,13 @@ import { NextSeo } from 'next-seo';
 
 const Product = ({ product }) => {
   const {
+    id,
     name,
+    description,
+    slug,
     attachments: [{ path }],
   } = product;
+  const filePath = `${BASE_URL}${fixImageUrl(path)}`;
   useEffect(() => {
     console.log(product);
   }, []);
@@ -18,24 +22,24 @@ const Product = ({ product }) => {
   return (
     <>
       <NextSeo
-        title="Using More of Config"
-        description="This example uses more of the available config options."
+        title={name}
+        description={description}
         canonical="https://www.canonical.ie/"
         openGraph={{
-          url: 'https://ecommerce-pi-six.vercel.app/product/sasasasl/808614',
-          title: 'Open Graph Title',
-          description: 'Open Graph Description',
+          url: `https://vendemais.app/product/${slug}/${id}`,
+          title: name,
+          description,
           type: 'article',
           images: [
             {
-              url: 'https://ymbu.com.br/vendemais/uploads/1596210152018_blusa-manga-curta-em-ribana-canelada-branco_559020_1000_1.jpg',
+              url: filePath,
               width: 800,
               height: 600,
               itemprop: 'image',
               alt: 'Og Image Pequena',
             },
             {
-              url: 'https://ymbu.com.br/vendemais/uploads/ORIGINAL_1596210152018_blusa-manga-curta-em-ribana-canelada-branco_559020_1000_1.jpg',
+              url: filePath,
               width: 900,
               height: 800,
               itemprop: 'image',
