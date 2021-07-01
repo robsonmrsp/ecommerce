@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import PageLayout from '@/components/layout/PageLayout';
+import PageLayout from '@/components/layout/PageLayout/PageLayout';
 import { Link } from '@/components/base';
 import HttpRequest from '@/shared/http/HttpRequest';
 import { BASE_URL } from '@/shared/config';

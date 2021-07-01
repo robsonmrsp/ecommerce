@@ -1,6 +1,5 @@
-import { Col, Row } from 'react-bootstrap';
-import { Header } from '../Header';
-import { Comp } from './styles';
+import React from 'react';
+import { Header } from '../Header/Header';
 
 const PageLayout = ({ children }) => {
   console.log('');
