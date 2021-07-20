@@ -31,7 +31,7 @@ export const Header = () => {
   return (
     // checar o scrol para adicionar a classe navbar-stuck
     <header>
-      <div className={` navbar-sticky bg-light ${newClasses}`}>
+      <div className={`navbar-sticky bg-light ${newClasses}`}>
         <div className="navbar navbar-expand-lg navbar-light">
           <Container>
             <Link
@@ -41,7 +41,7 @@ export const Header = () => {
             >
               <Image width={142} src="img/logo-dark.png" alt="Vendemais" />
             </Link>
-            <Link className="navbar-brand d-sm-none mr-2" href="index.html" style={{ minWidth: '4.625rem' }}>
+            <Link className="navbar-brand d-sm-none mr-2" href="/" style={{ minWidth: '4.625rem' }}>
               <Image width={74} src="img/logo-icon.png" alt="Vendemais" />
             </Link>
             <SearchInput

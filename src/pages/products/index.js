@@ -31,7 +31,7 @@ const Home = ({ pageProducts, query }) => {zfds
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
                     <li className="breadcrumb-item">
-                      <a className="text-nowrap" href="index.html">
+                      <a className="text-nowrap" href="/">
                         <i className="czi-home" />
                         Home
                       </a>

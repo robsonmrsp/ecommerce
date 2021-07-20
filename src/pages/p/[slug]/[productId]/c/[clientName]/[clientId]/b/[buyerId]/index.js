@@ -6,7 +6,7 @@ import { BASE_URL } from '@/shared/config';
 import { fixImageUrl } from '@/shared/data';
 import { NextSeo } from 'next-seo';
 
-const Product = ({ product }) => {
+const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
   const {
     id,
     name,
@@ -22,12 +22,12 @@ const Product = ({ product }) => {
   return (
     <>
       <NextSeo
-        title={name}
+        title={slug}
         description={description}
         canonical="https://www.canonical.ie/"
         openGraph={{
-          url: `https://vendemais.app/product/${slug}/${id}`,
-          title: name,
+          url: `https://vendemais.app/product/${slug}/${id}/c/${clientName}/${clientId}/b/${buyerId}`,
+          title: slug,
           description,
           type: 'article',
           images: [
@@ -62,7 +62,7 @@ const Product = ({ product }) => {
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
                     <li className="breadcrumb-item">
-                      <a className="text-nowrap" href="/">
+                      <a className="text-nowrap" href="">
                         <i className="czi-home" />
                         Home
                       </a>
@@ -175,7 +175,6 @@ const Product = ({ product }) => {
                             className="btn-wishlist mr-0 mr-lg-n3"
                             type="button"
                             data-toggle="tooltip"
-                            title
                             data-original-title="Add to wishlist"
                           >
                             <i className="czi-heart" />
@@ -323,7 +322,6 @@ const Product = ({ product }) => {
                             <div className="card-header">
                               <h3 className="accordion-heading">
                                 <a
-                                  className
                                   href="#shippingOptions"
                                   role="button"
                                   data-toggle="collapse"
@@ -526,16 +524,19 @@ const Product = ({ product }) => {
 };
 
 export const getServerSideProps = async (ctx) => {
-  const { slug, idProduct } = ctx.params;
-  console.log(slug, idProduct);
+  const { slug, productId, clientName, clientId, buyerId } = ctx.params;
+  console.log(slug, productId, clientName, clientId, buyerId);
   const httpRequest = new HttpRequest();
-  // pesquisar pelo slud pode trazer varios registros... pensar na possibilidade de o slug ir com o id do produto
-  const product = await httpRequest.get(`rs/crud/products/${idProduct}`);
+  // pesquisar pelo slug pode trazer varios registros... pensar na possibilidade de o slug ir com o id do produto
+  const product = await httpRequest.get(`rs/api/v1/products/preview/${productId}`);
   return {
     props: {
       product,
+      clientName,
+      clientId,
+      buyerId,
     },
   };
 };
 
-export default Product;
+export default ProductPreview;
