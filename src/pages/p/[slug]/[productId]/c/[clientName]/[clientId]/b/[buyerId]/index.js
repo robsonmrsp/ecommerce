@@ -22,12 +22,12 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
   return (
     <>
       <NextSeo
-        title={slug}
+        title={name}
         description={description}
         canonical="https://www.canonical.ie/"
         openGraph={{
           url: `https://vendemais.app/product/${slug}/${id}/c/${clientName}/${clientId}/b/${buyerId}`,
-          title: slug,
+          title: name,
           description,
           type: 'article',
           images: [
