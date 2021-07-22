@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import PageLayout from '@/components/layout/PageLayout/PageLayout';
-import { Link } from '@/components/base';
+// import PageLayout from '@/components/layout/PageLayout/PageLayout';
+// import { Link } from '@/components/base';
 import HttpRequest from '@/shared/http/HttpRequest';
 import { BASE_URL } from '@/shared/config';
 import { fixImageUrl } from '@/shared/data';
@@ -16,7 +16,7 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
   } = product;
   const filePath = `${BASE_URL}${fixImageUrl(path)}`;
   useEffect(() => {
-    console.log(product);
+    window.location.replace('http://www.w3schools.com');
   }, []);
 
   return (
