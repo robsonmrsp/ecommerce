@@ -16,7 +16,7 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
   } = product;
   const filePath = `${BASE_URL}${fixImageUrl(path)}`;
   useEffect(() => {
-    window.location.replace('http://www.w3schools.com');
+    window.location.replace('https://moda.ymbu.com.br/#/product/808614?bid=112233');
   }, []);
 
   return (
@@ -55,7 +55,7 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
         }}
       />
       <>
-        <div>
+        {/* <div>
           <div className="page-title-overlap bg-dark pt-4">
             <div className="container d-lg-flex justify-content-between py-2 py-lg-3">
               <div className="order-lg-1 pr-lg-4 text-center text-lg-left">
@@ -64,11 +64,9 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
             </div>
           </div>
           <div className="container">
-            {/* Gallery + details*/}
             <div className="bg-light box-shadow-lg rounded-lg px-4 py-3 mb-5">
               <div className="px-lg-3">
                 <div className="row">
-                  {/* Product gallery*/}
                   <div className="col-lg-7 pr-lg-0 pt-lg-4">
                     <div className="cz-product-gallery">
                       <div className="cz-preview order-sm-2">
@@ -111,7 +109,6 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
                       </div>
                     </div>
                   </div>
-                  {/* Product details*/}
                   <div className="col-lg-5 pt-4 pt-lg-0">
                     <div className="product-details ml-auto pb-3">
                       <div className="mb-3">
@@ -137,7 +134,8 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        <div> Carregando produto...</div>
       </>
     </>
   );
