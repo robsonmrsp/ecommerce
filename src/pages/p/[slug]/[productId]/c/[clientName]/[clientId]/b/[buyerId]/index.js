@@ -13,9 +13,7 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
     description,
     slug,
     attachments: [{ path }],
-    owner: {
-      settings: { storeUrl },
-    },
+    cliente: { settings: { storeUrl } = {} },
   } = product;
   const filePath = `${BASE_URL}${fixImageUrl(path)}`;
   useEffect(() => {
@@ -24,7 +22,7 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
 
   return (
     <>
-      <NextSeo
+      <NextSeo  
         title={name}
         description={description}
         canonical="https://www.canonical.ie/"
