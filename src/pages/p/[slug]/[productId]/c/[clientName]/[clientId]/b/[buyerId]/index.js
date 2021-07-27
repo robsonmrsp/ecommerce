@@ -13,10 +13,13 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
     description,
     slug,
     attachments: [{ path }],
+    owner: {
+      settings: { storeUrl },
+    },
   } = product;
   const filePath = `${BASE_URL}${fixImageUrl(path)}`;
   useEffect(() => {
-    window.location.replace('https://moda.ymbu.com.br/#/product/808614?bid=112233');
+    window.location.replace(`${storeUrl}#/product/${id}?bid=${buyerId}`);
   }, []);
 
   return (
