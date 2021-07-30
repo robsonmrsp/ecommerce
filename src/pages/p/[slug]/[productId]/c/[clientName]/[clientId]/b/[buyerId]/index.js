@@ -17,12 +17,12 @@ const ProductPreview = ({ product, clientName, clientId, buyerId }) => {
   } = product;
   const filePath = `${BASE_URL}${fixImageUrl(path)}`;
   useEffect(() => {
-    window.location.replace(`${storeUrl}#/product/${id}?bid=${buyerId}`);
+    window.location.replace(`${storeUrl}#/product/${id}?bid=${buyerId}?cid=${clientId}`);
   }, []);
 
   return (
     <>
-      <NextSeo  
+      <NextSeo
         title={name}
         description={description}
         canonical="https://www.canonical.ie/"
