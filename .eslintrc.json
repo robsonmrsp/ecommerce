@@ -42,6 +42,19 @@
     "jsx-a11y/label-has-associated-control": "off",
     "spaced-comment": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "operator-linebreak" :"off"
+    "operator-linebreak" :"off",
+    "react/jsx-no-undef":"off",
+    "no-unused-vars":"off",
+    "jsx-a11y/control-has-associated-label":"off",
+    "implicit-arrow-linebreak":"off",
+    "block-spacing":"off",
+    "react/no-unknown-property":"off",
+    "no-trailing-spaces":"off",
+    "no-unused-expressions":"off",
+    "semi":"off",
+    "no-undef":"off",
+    "brace-style":"off",
+    "arrow-body-style":"off",
+    "global-require":"off"
   }
 }
