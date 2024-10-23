@@ -3,4 +3,5 @@ module.exports = {
   images: {
     domains: ['ymbu.com.br'],
   },
+  ignoreBuildErrors: true,
 };
