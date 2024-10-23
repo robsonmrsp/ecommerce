@@ -5,7 +5,7 @@ import { BASE_URL } from '@/shared/config';
 export default class HttpRequest {
   createAuthHeaders = () => {
     const headers = {};
-    headers['Authorization'] = `Basic ${btoa('modaadm:123456')}`;
+    headers['Authorization'] = `Basic ${btoa('moda:123456')}`;
     headers['Content-Type'] = 'application/json';
     return headers;
   };
